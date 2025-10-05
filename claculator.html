@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Sum funcation</h3>
+      <div id="display"></div>
+    <script>
+       
+        function sumFunciton(x,y){
+            let z;
+            x = prompt("enter your number");
+            y = prompt("enter your number");
+            x = parseInt(x);
+            y = parseInt(y);
+            alert(x+y);
+            z = x+y;
+            document.getElementById("display").innerHTML ="Total is :" + z;
+        }
+        function multilyFuncation(x,y){
+            x = prompt("enter your number");
+            y = prompt("enter your number");
+            // x = parseInt(x);
+            // y = parseInt(y);
+            alert(x*y);
+        }
+    </script>
+    <button onclick="sumFunciton()">sum</button>
+    <button onclick="multilyFuncation()">Multily</button>
+    
+</body>
+</html>
+

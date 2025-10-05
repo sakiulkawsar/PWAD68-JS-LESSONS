@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #output {
+            margin: 20px;
+            padding: 10px;
+            background-color: #aaa;
+            border: 1px solid #465464;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Registation form</h3>
+    <form action="rgs">
+        Name <br>
+        <input type="text" name="fullname" id="fullname"><br>
+        Gender <br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="femail">female<br>
+        District: <br>
+        <select name="id">
+            <option value="">selet one</option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="rajshahi">rajshahi</option>
+            <option value="khulna">khulna</option>
+            <option value="comilla">comilla</option>
+        </select> <br>
+        Address <br>
+        <textarea name="address" id="" placeholder="enter address"></textarea><br>
+        <button onclick="form_hande()">submit</button>
+
+    </form>
+    <div id="output"></div>
+    <script>
+        function form_hande() {
+            const form = document.forms['rgs'];
+
+            const fname = document.fullname.value.trim();
+            const gender = document.gender.value;
+            const District = form.District.value;
+            const address = form.address.value.trim();
+            if (!fname || !District || !gender || !address) {
+                document.getElementById('output').innerHTML = "<p style='color: red;'>Pless fill in all fields.</p>";
+
+            }
+            let outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+            <h4>submitted data:</h4>
+            <p><strong>Name:</strong>${fname}</p>
+               <p><strong>Name:</strong>${fname}</p>
+                  <p><strong>Name:</strong>${gender}</p>
+                     <p><strong>Name:</strong>${District}</p>
+                        <p><strong>Name:</strong>${address}</p>
+                        `;
+
+        }
+
+    </script>
+</body>
+
+</html>
