@@ -7,11 +7,12 @@
 </head>
 <body>
   <h3>Form validation</h3>
-  <form action="" name="myForm" onsubmit="return formValidation()">
+  <button action="" name="myForm" onsubmit="return formValidation()">
     <input type="text" name="fullname" placeholder="enter your name"> <br>
     <input type="text" name="phone" placeholder="Enter your phone number"> <br>
     <input type="text" name="email" placeholder="Enter your email"> <br>
     <input type="text" name="address" placeholder="enter your address"> <br>
+    <button onclick="formValidation()" type="button">submit</button>
 
   </form>
   <script>
@@ -21,8 +22,23 @@
         let email = document.myForm.email.value;
          let address = document.myForm.address.value;
          if(fullname==""){
-          al
+          alert("Name con't be blank");
+          return false;
          }
+          if(phone==""){
+          alert("Name con't be blank");
+          return false;
+    }
+     if(email==""){
+          alert("Name con't be blank");
+          return false;
+     }
+      if(address==""){
+          alert("Name con't be blank");
+          return false;
+      }
+      alert ("All dat validate");
+      return true;
     }
   </script>
 </body>
