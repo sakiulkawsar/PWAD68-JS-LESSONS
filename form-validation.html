@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <h3>From validation</h3>
+  <h3>Form validation</h3>
+  <form action="" name="myForm" onsubmit="return formValidation()">
+    <input type="text" name="fullname" placeholder="enter your name"> <br>
+    <input type="text" name="phone" placeholder="Enter your phone number"> <br>
+    <input type="text" name="email" placeholder="Enter your email"> <br>
+    <input type="text" name="address" placeholder="enter your address"> <br>
 
-
-    <form action="" name="form">
-      <!-- First Name -->
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="KArim" /><br /><br />
-      </div>
-      <div>
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" /><br /><br />
-      </div>
-      <div>
-        <label for="email">Email address:</label>
-        <input type="text" id="email" name="email" /><br /><br />
-      </div>
-      <div>
-        <label for="number">Phone number:</label>
-        <input type="number" id="number" name="number" /><br /><br />
-      </div>
-         <input type="submit" onclick="name()" value="Submit" />
-      </form>
-      <script>
-        function name(){
-            let fname = document.form.name.value;
-            alert(fname);
-        }
-
-        name()
-       
-      </script>
+  </form>
+  <script>
+    function formValidation () {
+      let fullname = document.myForm.fullname.value;
+       let phone = document.myForm.phone.value;
+        let email = document.myForm.email.value;
+         let address = document.myForm.address.value;
+         if(fullname==""){
+          al
+         }
+    }
+  </script>
 </body>
 </html>

@@ -3,89 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arithmetic Operators</title>
-
-    <style>
-      #output {
-        color: red;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-      }
-    </style>
+    <title>Document</title>
   </head>
+
   <body>
-    <form name="form">
-      <!-- First Name -->
-      <div>
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname" /><br /><br />
-      </div>
-
-      <!-- Last Name -->
-      <div>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" /><br /><br />
-      </div>
-
-      <!-- Gender -->
-      <div>
-        <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="male" />
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">Female</label><br /><br />
-      </div>
-
-      <!-- District -->
-      <div>
-        <label for="district">District:</label>
-        <select name="district" id="district">
-          <option value="Dhaka">Dhaka</option>
-          <option value="Rajshahi">Rajshahi</option>
-          <option value="Chittagong">Chittagong</option>
-          <option value="Khulna">Khulna</option>
-          <option value="Barishal">Barishal</option>
-          <option value="Rangpur">Rangpur</option>
-          <option value="Mymensingh">Mymensingh</option>
-        </select>
-      </div> <br>Address <br>
-      <textarea name="address" id="" placeholder="Enter your address"></textarea> <br>
-      Skills: <br>
-      <input type="checkbox" name="html" value="html">HTML
-      <input type="checkbox" name="html" value="css">CSS
-      <input type="checkbox" name="html" value="javascript">javascript
-      <input type="checkbox" name="html" value="php">PHP
-      <input type="checkbox" name="html" value="mysql">mysql
-
+    <h3>Registration Form</h3>
+    <form action="" name="rgs">
+      Name: <br />
+      <input type="text" name="fullname" placeholder="Enter your name" /><br />
+      Gender: <br />
+      <input type="radio" name="gender" value="male" />Male
+      <input type="radio" name="gender" value="female" />Female <br />
+      District: <br />
+      <select name="district" id="">
+        <option value="">Select one</option>
+        <option>Dhaka</option>
+        <option>Sylhet</option>
+        <option>Rajshahi</option>
+        <option>Khulna</option>
+      </select>
       <br />
-      <!-- Submit -->
-      <input type="submit" onclick="FormHandaler(event)" value="Submit" />
-
-      <br /><br />
-      <!-- Output -->
-      <div id="output"></div>
+      Address: <br />
+      <textarea name="address" id="" placeholder="Enter address"></textarea
+      ><br />
+      Skills: <br />
+      <input type="checkbox" name="skills[]" class="skills" value="html" />HTML
+      <input type="checkbox" name="skills[]" class="skills" value="css" />CSS
+      <input
+        type="checkbox"
+        name="skills[]"
+        class="skills"
+        value="javascript"
+      />JavaScript
+      <input type="checkbox" name="skills[]" class="skills" value="php" />PHP
+      <input
+        type="checkbox"
+        name="skills[]"
+        class="skills"
+        value="mysql"
+      />MySQL
+      <br />
+      <button onclick="form_handle()" type="button">Submit</button>
     </form>
 
-    <!-- Script -->
     <script>
-      function FormHandaler(event) {
-        event.preventDefault();
+      function form_handle() {
+        let output;
+        let fname = document.rgs.fullname.value;
+        let gender = document.rgs.gender.value;
 
-        let fname = document.form.fname.value;
-        let lname = document.form.lname.value;
-        let gender = document.form.gender.value;
-        let district = document.form.district.value;
+        let skills = "";
 
-        const output = document.getElementById("output");
-        output.innerHTML = `
-          <strong>First Name:</strong> ${fname}<br />
-          <strong>Last Name:</strong> ${lname}<br />
-          <strong>Gender:</strong> ${gender}<br />
-          <strong>District:</strong> ${district}
-        `;
+        let checkboxes = document.getElementsByClassName("skills");
+
+        for (let i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].checked) {
+            skills += checkboxes[i].value + ",";
+          }
+        }
+        //console.log(skills)
+        output = "<h1>" + fname + " </h1>";
+        output += gender;
+        output += skills;
+
+        document.getElementById("display").innerHTML = output;
       }
     </script>
+
+    <div id="display"></div>
   </body>
 </html>
