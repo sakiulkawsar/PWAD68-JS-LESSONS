@@ -3,18 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arithmetic Operators</title>
-
-    <style>
-      #output {
-        color: red;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-      }
-    </style>
+    <title>Document</title>
   </head>
+
   <body>
     <form name="form">
       <!-- First Name -->
@@ -53,30 +44,23 @@
       </div> <br>Address <br>
       <textarea name="address" id="" placeholder="Enter your address"></textarea> <br>
       Skills: <br>
-      <input type="checkbox" name="skills[]" value="html">HTML
-      <input type="checkbox" name="skills[]" value="css">CSS
-      <input type="checkbox" name="skills[]" value="javascript">javascript
-      <input type="checkbox" name="skills[]" value="php">PHP
-      <input type="checkbox" name="skills[]" value="mysql">mysql
+      <input type="checkbox" name="html" value="html">HTML
+      <input type="checkbox" name="html" value="css">CSS
+      <input type="checkbox" name="html" value="javascript">javascript
+      <input type="checkbox" name="html" value="php">PHP
+      <input type="checkbox" name="html" value="mysql">mysql
 
       <br />
-      <!-- Submit -->
-      <input type="submit" onclick="FormHandaler(event)" value="Submit" />
-
-      <br /><br />
-      <!-- Output -->
-      <div id="output"></div>
+      <button onclick="form_handle()" type="button">Submit</button>
     </form>
 
-    <!-- Script -->
     <script>
-      function FormHandaler(event) {
-        event.preventDefault();
+      function form_handle() {
+        let output;
+        let fname = document.rgs.fullname.value;
+        let gender = document.rgs.gender.value;
 
-        let fname = document.form.fname.value;
-        let lname = document.form.lname.value;
-        let gender = document.form.gender.value;
-        let district = document.form.district.value;
+        let skills = "";
 
         const output = document.getElementById("output");
         output.innerHTML = `
@@ -85,10 +69,7 @@
           <strong>Gender:</strong> ${gender}<br />
           <strong>District:</strong> ${district}
         `;
-        document
-
       }
     </script>
-
   </body>
 </html>

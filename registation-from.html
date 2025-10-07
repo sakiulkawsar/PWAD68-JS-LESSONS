@@ -5,80 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arithmetic Operators</title>
 
-    <style>
-      #output {
-        color: red;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-      }
-    </style>
   </head>
   <body>
-    <form name="form">
-      <!-- First Name -->
-      <div>
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname" /><br /><br />
-      </div>
+    <h3>Registration form</h3>
+    <form action="" name="rgs">
+      Name <br>
+      <input type="text" name="fullname" placeholder="Enter your name"> <br>
+      Gender <br>
+      <input type="radio" name="gender" value="male">male
+      <input type="radio" name="gender" value="female">Female
+      District <br>
+      <select name="district" id="">
+        <option value="">Select one</option>
+        <option>Dhaka</option>
+          <option>Rangpur</option>
+          <option>Khulna</option>
+          <option>Borishal</option>
+          <option>Comilla</option>
+          <option>Rajshahi</option>
+        
+      </select> <br>
+      Address <br>
+      <textarea name="address" id="" placeholder="Enter your address"></textarea> <br>
+      <button onclick="form-handle()" type="button">Submit</button>
+      <script>
+        function form-handle() {
+          let fname = document.rgs.fullname.value;
+          let gender = document.rgs.gender.value;
+          alert(gender);
+        }
+      </script>
 
-      <!-- Last Name -->
-      <div>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" /><br /><br />
-      </div>
-
-      <!-- Gender -->
-      <div>
-        <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="male" />
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">Female</label><br /><br />
-      </div>
-
-      <!-- District -->
-      <div>
-        <label for="district">District:</label>
-        <select name="district" id="district">
-          <option value="Dhaka">Dhaka</option>
-          <option value="Rajshahi">Rajshahi</option>
-          <option value="Chittagong">Chittagong</option>
-          <option value="Khulna">Khulna</option>
-          <option value="Barishal">Barishal</option>
-          <option value="Rangpur">Rangpur</option>
-          <option value="Mymensingh">Mymensingh</option>
-        </select>
-      </div>
-
-      <br />
-      <!-- Submit -->
-      <input type="submit" onclick="FormHandaler(event)" value="Submit" />
-
-      <br /><br />
-      <!-- Output -->
-      <div id="output"></div>
     </form>
-
-    <!-- Script -->
-    <script>
-      function FormHandaler(event) {
-        event.preventDefault();
-
-        let fname = document.form.fname.value;
-        let lname = document.form.lname.value;
-        let gender = document.form.gender.value;
-        let district = document.form.district.value;
-
-        const output = document.getElementById("output");
-        output.innerHTML = `
-          <strong>First Name:</strong> ${fname}<br />
-          <strong>Last Name:</strong> ${lname}<br />
-          <strong>Gender:</strong> ${gender}<br />
-          <strong>District:</strong> ${district}
-        `;
-      }
-    </script>
   </body>
 </html>
