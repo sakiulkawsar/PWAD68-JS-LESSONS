@@ -1,0 +1,42 @@
+
+    <!-- regular expration -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <script>
+        function emailValidation() {
+            let pattern = /^[A-Za-z0-9._]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/i;
+
+            if (document.myform.email.value.search(pattern) == -1) {
+                alert("Invalid E-mail");
+            } 
+            else if (document.myform.email.value != document.myform.confirmemail.value) {
+                alert("E-mail does not match");
+            } 
+            else {
+                alert("Your email is fully valid!");
+            }
+        }
+    </script>
+
+    <form name="myform">
+        <strong>Email ID:&nbsp;</strong>
+        <input type="text" name="email" placeholder="Enter your email ID"/> <br><br>
+
+        <strong>Confirm Email ID:&nbsp;</strong>
+        <input type="text" name="confirmemail" placeholder="Re-enter your email ID"/> <br><br>
+
+        <input type="button" value="Submit" onclick="emailValidation()">
+    </form>
+
+</body>
+</html>
+
+
+</body>
+</html>
