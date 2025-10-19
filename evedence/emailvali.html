@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <h3>Email Validation</h3>
+    <form action="" name="myform">
+        <input type="text" name="email" placeholder="Enter your email"><br>
+        <input type="text" name="Con-email" placeholder="Enter your email Again"><br>
+        <input type="button" value="SUBMIT" onclick="validationCheck()">
+    </form>
+
+    <script>
+        function validationCheck() {
+            let email = document.myform.email.value;
+            let conEmail = document.myform['Con-email'].value;
+            let pattern = /^[A-Za-z0-9._]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+
+            if (email.search(pattern) === -1) {
+                alert("Invalid Email Format");
+            } else if (email !== conEmail) {
+                alert("Emails do not match");
+            } else {
+                alert("Email format is valid and both match");
+            }
+        }
+    </script>
+</body>
+</html>

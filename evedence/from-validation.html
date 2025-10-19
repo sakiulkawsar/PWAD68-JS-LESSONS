@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>validation</h3>
+    <form action="" name="myform" onsubmit="return formValidation()">
+        <input type="text" name="fullname" placeholder="Enter your name"><br>
+        <input type="text" name="phone" placeholder="enter your number"><br>
+        <input type="text" name="email" placeholder="enter your email"> <br>
+        <input type="submit" name="submit" value="SUBMIT">
+    </form>
+    <SCRipt>
+        function formValidation () {
+
+            let fullname = document.myform.fullname.value;
+             let phone = document.myform.phone.value;
+              let email = document.myform.email.value;
+            if (fullname=="") {
+                alert ("Name cnt't be blank");
+                return false;
+            } 
+            if (email=="") {
+                alert ("email cnt't be blank");
+                return false;
+            }
+            if (phone=="") {
+                alert ("phone cnt't be blank");
+                return false;
+            }
+            alert ("All data validation");
+
+            
+            return true;
+        
+    }
+    </SCRipt>
+</body>
+</html>
