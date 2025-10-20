@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+  <h3>Login Form</h3>
+  <form name="LoginForm">
+    <input type="text" name="fname" placeholder="Enter your full name"> <br>
+    <input type="password" name="password" placeholder="Enter your password"> <br>
+    <input type="password" name="confpassword" placeholder="Enter your password again"> <br>
+    <button type="button" onclick="LoginValidation()">Login</button>
+  </form>
+
+  <script>
+    function LoginValidation() {
+      let fullname = document.LoginForm.fname.value;
+      let password = document.LoginForm.password.value;
+      let conpassword = document.LoginForm.confpassword.value;
+      let errMsg = "";
+
+      // ✅ Fullname validation
+      if (fullname == "") {
+        errMsg += "Enter your name\n";
+      } else if (fullname.length < 5 || fullname.length > 10) {
+        errMsg += "Fullname must be between 5 and 10 characters\n";
+      }
+
+      // ✅ Password validation
+      if (password == "") {
+        errMsg += "Enter your password\n";
+      }else if (fullname.length < 8 || fullname.length > 12){
+        errMsg += "password must be between 8 and 12 characters\n";
+      }
+
+      // ✅ Confirm password validation
+     else if (conpassword == "") {
+        errMsg += "Enter your password again\n";
+      } else if (password != conpassword) {
+        errMsg += "Passwords do not match\n";
+      }
+
+      // ✅ Show error or success
+      if (errMsg != "") {
+        alert(errMsg);
+      } else {
+        // alert("Login Successful!");
+          document.getElementById("display").innerHTML = errMsg;
+      }
+    }
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+</head>
+<body>
+  <h3>Login Form</h3>
+  <form name="LoginForm">
+    <input type="text" name="fname" placeholder="Enter your full name"> <br>
+    <input type="password" name="password" placeholder="Enter your password"> <br>
+    <input type="password" name="confpassword" placeholder="Enter your password again"> <br>
+    <button type="button" onclick="LoginValidation()">Login</button>
+  </form>
+
+  <!-- ✅ Added this div to show result -->
+  <div id="display" style="color:red; margin-top:10px;"></div>
+
+  <script>
+    function LoginValidation() {
+      let fullname = document.LoginForm.fname.value;
+      let password = document.LoginForm.password.value;
+      let conpassword = document.LoginForm.confpassword.value;
+      let errMsg = "";
+
+      //  Fullname validation
+      if (fullname == "") {
+        errMsg += "Enter your name<br>";
+      } else if (fullname.length < 5 || fullname.length > 10) {
+        errMsg += "Fullname must be between 5 and 10 characters<br>";
+      }
+
+      //  Password validation
+      if (password == "") {
+        errMsg += "Enter your password<br>";
+      } else if (password.length < 8 || password.length > 12) {
+        errMsg += "Password must be between 8 and 12 characters<br>";
+      }
+
+      //  Confirm password validation
+      if (conpassword == "") {
+        errMsg += "Enter your password again<br>";
+      } else if (password != conpassword) {
+        errMsg += "Passwords do not match<br>";
+      }
+
+      //  Show error or success
+      if (errMsg != "") {
+        document.getElementById("display").innerHTML = errMsg;
+      } else {
+        document.getElementById("display").style.color = "green";
+        document.getElementById("display").innerHTML = "Login Successful!";
+      }
+    }
+  </script>
+</body>
+</html>
+
