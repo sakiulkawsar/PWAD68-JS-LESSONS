@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let tax = .5;
+    function addTax(item){
+        let Total = item + (item * tax);
+        let  NewTotal = Math.floor(Total * 100) /100;
+        console.log(Total);
+        if (Fraction<10){
+            NewTotal = NewTotal + ".0";
+        }
+       Total=NewTotal + "." + Fraction;
+        alert(NewTotal);
+    }
+    </script>
+    <p id="addTax"></p>
+    <button onclick="addTax(10.99)">Add Tax</button>
+</body>
+</html>

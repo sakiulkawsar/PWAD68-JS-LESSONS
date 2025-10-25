@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Hover Switch</title>
+</head>
+<body>
+  <script>
+    // Preload both images
+    let img1 = new Image();
+    img1.src = "imags/images1.webp";
+
+    let img2 = new Image();
+    img2.src = "imags/images2.webp";
+
+    // When mouse goes over
+    function switch2() {
+      document.getElementById("image2").src = img2.src;
+    }
+
+    // When mouse leaves
+    function switch1() {
+      document.getElementById("image2").src = img1.src;
+    }
+  </script>
+
+  <!-- Make sure both filenames exist exactly as written -->
+  <a href="#" onmouseover="switch2()" onmouseout="switch1()">
+    <img id="image2" src="imags/images1.webp" alt="Image" width="300">
+  </a>
+</body>
+</html>
+
