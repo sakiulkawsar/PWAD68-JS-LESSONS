@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <h2>Registation form</h2> <br>
-    <form name="myForm">
-        Address: <input type="text" name="address"> <br> <br>
-        Phone number: <input type="text" name="phone"> <br> <br>
-        <button type="submit" onclick="submitForm()">Submit</button>
+    <h3>Document form</h3>
+    <form name="myform">
+       Address: <input type="text" name="address"> <br>
+       Phone: <input type="text" name="phone"> <br>
+       <button type="submit" onclick="formValidation()">Click me</button>
     </form>
     <script>
-        function submitForm() {
-            let address = document.myForm.address.value;
-            let phone = document.myForm.phone.value;
+        function formValidation(){
+            let address = document.myform.address.value;
+            let phone = document.myform.phone.value;
 
-            let x = window.open("", "rayhan", "width=400, height=400");
-            const output = ` Address: ${address} <br> Phone number: ${phone} `;
-
-
+            let x = window.open("", "", width=400, height=500);
+          const output = `<p>Address: ${address}</p>
+                          <p>Phone: ${phone}</p>`;
             x.document.write(output);
         }
     </script>
 </body>
-
 </html>

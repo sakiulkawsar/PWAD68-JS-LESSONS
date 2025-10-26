@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>higest nad lowest checker</h2>
+    <button onclick="min_max()">click me</button>
+    <script>
+        function min_max() {
+            let num1 = Number(prompt("Enter first number"));
+            let num2 = Number(prompt("Enter second number"));
+            let num3 = Number(prompt("Enter threed number"));
+
+            // num1 = parseInt(num1);
+            // num2 = parseInt(num2);
+            // num3 = parseInt(num3);
+
+            const numbers = [num1, num2, num3];
+            // console.log(numbers);
+
+            let max = numbers[0];
+            let min = numbers[0];
+
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] > max) {
+                    max = numbers[i];
+                }
+                if (numbers[i] < min) {
+                    min = numbers[i]
+                }
+            }
+            document.write("max number si " + max + "min number is " + min);
+        }
+    </script>
+</body>
+
+</html>
