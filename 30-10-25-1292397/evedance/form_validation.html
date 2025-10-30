@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainee's Student form</title>
+</head>
+<body>
+  <h2>Trainee's Information Form</h2>
+  <form name="myform">
+    <input type="text" name="fullname" placeholder="Enter your name"> <br>
+    <input type="number" name="contact" placeholder="Enter your contact number"> <br>
+    <textarea name="remark" placeholder="Write your remark..."></textarea> <br>
+
+    Gender: <br>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female <br><br>
+
+    Courses: <br>
+    <label>
+      <input type="checkbox" name="course" value="NT"> NT
+      <input type="checkbox" name="course" value="IAD"> IAD
+      <input type="checkbox" name="course" value="DDD"> DDD
+      <input type="checkbox" name="course" value="ESAD"> ESAD
+    </label> <br><br>
+
+    Location: <br>
+    <select name="location">
+      <option value="">Select your location</option>
+      <option value="Banani">Banani</option>
+      <option value="Dhanmondi">Dhanmondi</option>
+      <option value="Mirpur">Mirpur</option>
+    </select> <br><br>
+
+    <button type="button" onclick="formData()">Submit</button>
+  </form>
+
+  <h4>Form Output:</h4>
+  <div id="output"></div>
+
+  <script>
+    function formData() {
+  
+      let form = document.forms["myform"];
+
+    
+      let name = form.fullname.value;
+      let contact = form.contact.value;
+      let remark = form.remark.value;
+
+     
+      let gender = "";
+      let genderOptions = form.gender;
+      for (let i = 0; i < genderOptions.length; i++) {
+        if (genderOptions[i].checked) {
+          gender = genderOptions[i].value;
+        }
+      }
+
+     
+      let courses = [];
+      let courseOptions = form.course;
+      for (let i = 0; i < courseOptions.length; i++) {
+        if (courseOptions[i].checked) {
+          courses.push(courseOptions[i].value);
+        }
+      }
+
+      let location = form.location.value;
+
+      document.getElementById("output").innerHTML = `
+        <b>Name:</b> ${name} <br>
+        <b>Contact:</b> ${contact} <br>
+        <b>Remark:</b> ${remark} <br>
+        <b>Gender:</b> ${gender} <br>
+        <b>Courses:</b> ${courses.join(", ")} <br>
+        <b>Location:</b> ${location}
+      `;
+    }
+  </script>
+</body>
+</html>
